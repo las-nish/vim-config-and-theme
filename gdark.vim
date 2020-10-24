@@ -18,37 +18,11 @@ if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 
   finish
 endif
 
-"    HEX   |256-color| 256-Color |      Type
-"          |         |  -> HEX   |
-" --------------------------------------------------
-"  #ffffff |     015 | #ffffff   | On Background
-"  #e1e1e1 |     254 | #e4e4e4   | High-emphasis
-"  #b2b2b2 |     249 | #b2b2b2   | Hi-Mid-emphasis
-"  #8a8a8a |     245 | #8a8a8a   | Mid-emphasis
-"  #6c6c6c |     242 | #6c6c6c   | Disabled
-"  #4e4e4e |     239 | #4e4e4e   | Overlay
-"  #383838 |     237 | #3a3a3a   | Overlay
-"  #313131 |     236 | #303030   | Overlay
-"  #2a2a2a |     235 | #262626   | Overlay
-"  #1a1a1a |     234 | #1c1c1c   | Surface
-"  #0c0c0c |     232 | #080808   | Background
-"  #000000 |     000 | #000000   | Background
-"  #bb86fc |     141 | #af87ff   | Primary
-"  #b26eff |     135 | #af5fff   | Primary Valiant
-"  #00d7ff |     045 | #00d7ff   | Secondary
-"  #cf6679 |     168 | #d75f87   | Error
-"  #ff4081 |     204 | #ff5f87   | (Special & Diff Delete)
-"  #7CB342 |     107 | #87af5f   | (Diff Add)
-"  #ffdf00 |     220 | #FDD835   | (Diff Change)
-
 " =================
 "  Background
 " =================
-" hi Normal ctermfg=254 ctermbg=235 cterm=NONE guifg=#e1e1e1 guibg=#2a2a2a gui=NONE
-" hi NonText ctermfg=236 ctermbg=235 cterm=NONE guifg=#313131 guibg=#2a2a2a gui=NONE
-
-hi Normal ctermfg=254 ctermbg=235 cterm=NONE guifg=#e1e1e1 guibg=#000000 gui=NONE
-hi NonText ctermfg=236 ctermbg=235 cterm=NONE guifg=#313131 guibg=#000000 gui=NONE
+hi Normal ctermfg=000 ctermbg=000 cterm=NONE guifg=#00ff00 guibg=#000000 gui=NONE
+hi NonText ctermfg=000 ctermbg=000 cterm=NONE guifg=#313131 guibg=#000000 gui=NONE
 
 " ============
 "  Primary
