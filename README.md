@@ -37,5 +37,7 @@ Information about the theme is below
 ```
 
 That's it. Let me know if there are any problems.
-**Lasan Nishshanka**
-**First Update : 24 October 2020 @ 11:32 P.M.**
+
+**- Lasan Nishshanka**
+
+**- First Update : 24 October 2020 @ 11:32 P.M.**
