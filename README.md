@@ -36,6 +36,13 @@ Information about the theme is below
   #ffdf00 |     220 | #FDD835   | (Diff Change)
 ```
 
+**More Tools**
+
+![https://github.com/vim-scripts/AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
+
+![https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)\
+Install on Linux Ubuntu : `sudo apt-get install vim-airline`
+
 That's it. Let me know if there are any problems.
 
 **- Lasan Nishshanka**
