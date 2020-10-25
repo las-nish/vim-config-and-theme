@@ -25,7 +25,6 @@ Information about the theme is below
   #313131 |     236 | #303030   | Overlay
   #2a2a2a |     235 | #262626   | Overlay
   #1a1a1a |     234 | #1c1c1c   | Surface
-  #0c0c0c |     232 | #080808   | Background
   #000000 |     000 | #000000   | Background
   #bb86fc |     141 | #af87ff   | Primary
   #b26eff |     135 | #af5fff   | Primary Valiant
