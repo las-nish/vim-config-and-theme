@@ -123,9 +123,6 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " Set options and add mapping such that Vim behaves a lot like MS-Windows
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2018 Dec 07
 
 " Bail out if this isn't wanted.
 if exists("g:skip_loading_mswin") && g:skip_loading_mswin
