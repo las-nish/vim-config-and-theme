@@ -1,11 +1,91 @@
 " Lasan Nishshanka
 " 24 October 2020 @ 11:14 P.M.
 
+" -------------- "
+" ---- Note ---- "
+" -------------- "
+
+" Install Airline : sudo apt-install vim-airline ( Status Bar - On Linux )
+" Plugin Manager : https://github.com/junegunn/vim-plug
+
+" -------------- "
+" ---- Help ---- "
+" -------------- "
+
+" CTRL + F               -> Find Dialog
+" CTRL + H               -> Replace Dialog
+" CTRL + TAB             -> Next Window
+" CTRL + A               -> Select All
+" CTRL + C               -> Copy
+" CTRL + V               -> Paste
+" CTRL + X               -> Cut
+" CTRL + Z               -> Undo
+" CTRL + SHIFT + Y       -> Redo
+" CTRL + SHIFT + W       -> Wordwrap ( Enable / Disable )
+
+
 " =============== Custom commands =============== "
 
-" Install Airline : sudo apt-install vim-airline
+" Install Custom Plugins
+call plug#begin()
+	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'ayu-theme/ayu-vim'
+	Plug 'gruvbox-community/gruvbox'
+	Plug 'vim-scripts/AutoComplPop'
+	Plug 'srcery-colors/srcery-vim'
+	Plug 'xolox/vim-misc'
+	Plug 'xolox/vim-session'
+call plug#end()
 
-colorscheme gdark
+set termguicolors     " enable true colors support
+
+" -------------
+" Gruvbox Theme
+" -------------
+
+" colorscheme gruvbox
+" set bg=dark
+" let g:gruvbox_contrast = medium
+" colorscheme gruvbox
+
+" ---------
+" Ayu Theme
+" ---------
+
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+
+" ------------
+" Srcery Theme ( By Default )
+" ------------
+
+colorscheme srcery
+
+" ---------
+" NERD Tree
+" ---------
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+let g:NERDTreeChDirMode=2
+let g:NERDTreeShowBookmarks=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+
+autocmd VimEnter * :NERDTree
+
+" ------------------
+" Vim-Session Plugin
+" ------------------
+
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
+let g:session_autosave_to = 'default'
+let g:session_verbose_messages = 0
+
 set nobackup
 set noswapfile
 set noundofile
@@ -16,8 +96,8 @@ set noundofile
 set guioptions-=l
 set guioptions-=L
 
-" Tabs Error | ^
-set invlist
+" Invert
+" set invlist
 
 " Height of the command bar
 set cmdheight=1
@@ -27,11 +107,12 @@ set ruler
 
 " Turn on the Wild menu
 set wildmenu
+set wildmode=list:longest,full
 
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set number
-:highlight LineNr guifg=#005D57 " Line Number Color Change
+":highlight LineNr guifg=#005D57 " Line Number Color Change
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
@@ -43,7 +124,7 @@ call setreg('/', old_query)
 endfun
 
 if has("autocmd")
-autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee,*.c,*.h,*.asm,*.s :call CleanExtraSpaces()
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,18 +177,18 @@ hi foldcolumn guibg=bg
 hi VertSplit guibg=bg guifg=bg
 
 " Treeview
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-set guioptions-=L
-set guioptions-=S  "statusbar
-noremap <C-P>		:Vexplore<CR> " Shortcut Key
-augroup ProjectDrawer
-autocmd!
-autocmd VimEnter * :Vexplore
-augroup END
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" set guioptions-=L
+" set guioptions-=S  "statusbar
+" noremap <C-P>		:Vexplore<CR> " Shortcut Key
+" augroup ProjectDrawer
+" autocmd!
+" autocmd VimEnter * :Vexplore
+" augroup END
 
 "let g:netrw_banner = 0
 "noremap <C-P>		:Explore<CR> " Shortcut Key
@@ -121,8 +202,6 @@ inoremap { {}<left>
 "inoremap < <><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-
-" Set options and add mapping such that Vim behaves a lot like MS-Windows
 
 " Bail out if this isn't wanted.
 if exists("g:skip_loading_mswin") && g:skip_loading_mswin
@@ -160,6 +239,11 @@ map <S-Insert>		"+gP
 cmap <C-V>		<C-R>+
 cmap <S-Insert>		<C-R>+
 endif
+
+" Ctrl + Shift + W Word Wrap
+noremap <C-S-W>		:set wrap!<CR>
+vnoremap <C-S-W>		<C-C>:set wrap!<CR>
+inoremap <C-S-W>		<Esc>:set wrap!<CR>gi
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
